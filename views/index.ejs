@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Welcome to the App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #5f9ea0;
+        font-family: arial;
+      }
+      .container {
+        padding: 30px 40px 60px 40px;
+        max-width: 560px;
+        margin: 50px auto;
+        background-color: #ccc;
+        border-radius: 5px;
+      }
+      .heading {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .container ul {
+        margin-bottom: 25px;
+      }
+      .inputtext {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        margin-right: 10px;
+        font-size: 1rem;
+      }
+      .btn {
+        padding: 5px 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #8a2be2;
+        color: white;
+        font-size: 1rem;
+      }
+      ul li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">ToDo List</h1>
+
+      <ul>
+        <% for(let todo of todos) { %>
+        <li><%= todo.DESC %></li>
+        <% } %>
+      </ul>
+
+      <form id="form" action="/add" method="POST">
+        <div>
+          <input
+            name="todoDesc"
+            class="inputtext"
+            type="text"
+            id="text"
+            placeholder="Add new ToDo"
+          />
+          <input type="submit" class="btn" value="Add ToDo" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
